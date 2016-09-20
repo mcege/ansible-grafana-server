@@ -1,0 +1,5 @@
+# Handlers for grafana role
+---
+
+- name: restart grafana-server
+  service: name=grafana-server state=restarted

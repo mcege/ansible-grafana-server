@@ -24,13 +24,13 @@
 ;http_addr =
 
 # The http port  to use
-http_port = 9201
+;http_port = 3000
 
 # The public facing domain name used to access grafana from a browser
 ;domain = localhost
 
 # The full public facing url
-root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana
+;root_url = %(protocol)s://%(domain)s:%(http_port)s/
 
 # Log web requests
 ;router_logging = false
@@ -48,11 +48,11 @@ root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana
 #################################### Database ####################################
 [database]
 # Either "mysql", "postgres" or "sqlite3", it's your choice
-type = postgres
-host = {{ grafana_psql_host }}
-name = grafana
-user = grafana
-password = grafana
+;type = sqlite3
+;host = 127.0.0.1:3306
+;name = grafana
+;user = root
+;password =
 
 # For "postgres" only, either "disable", "require" or "verify-full"
 ;ssl_mode = disable
@@ -63,7 +63,7 @@ password = grafana
 #################################### Session ####################################
 [session]
 # Either "memory", "file", "redis", "mysql", default is "memory"
-provider = postgres
+;provider = file
 
 # Provider config options
 # memory: not have any config yet
@@ -115,10 +115,10 @@ provider = postgres
 #################################### Users ####################################
 [users]
 # disable user signup / registration
-allow_sign_up = false
+;allow_sign_up = true
 
 # Allow non admin users to create organizations
-allow_org_create = false
+;allow_org_create = true
 
 # Set to true to automatically assign new users to the default organization (id 1)
 ;auto_assign_org = true
@@ -205,19 +205,3 @@ allow_org_create = false
 ;enabled = false
 ;rabbitmq_url = amqp://localhost/
 ;exchange = grafana_events
-
-;#################################### Dashboard JSON files ##########################
-[dashboards.json]
-;enabled = false
-;path = /var/lib/grafana/dashboards
-
-admin_user = admin
-admin_password = admin
-
-#################################### Auth Proxy ##########################
-[auth.proxy]
-enabled = true
-header_name = X-WEBAUTH-USER
-header_property = username
-auto_sign_up = false
-
