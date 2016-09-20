@@ -10,10 +10,10 @@ supported_os_families:
 install_repo: true
 
 # The grafana APT repo params
-grafana_server_apt_repo_url: 'https://packagecloud.io/grafana/stable/el/6/$basearch'
-grafana_server_apt_repo_distribution: grafana
-grafana_server_apt_repo: grafana
-grafana_server_apt_repo_key_url: 'https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana'
+#grafana_server_apt_repo_url: "{{ grafana }}"
+#grafana_server_apt_repo_distribution: grafana
+#grafana_server_apt_repo: grafana
+#grafana_server_apt_repo_key_url: 'https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana'
 
 grafana_server_yum_repo: grafana
 

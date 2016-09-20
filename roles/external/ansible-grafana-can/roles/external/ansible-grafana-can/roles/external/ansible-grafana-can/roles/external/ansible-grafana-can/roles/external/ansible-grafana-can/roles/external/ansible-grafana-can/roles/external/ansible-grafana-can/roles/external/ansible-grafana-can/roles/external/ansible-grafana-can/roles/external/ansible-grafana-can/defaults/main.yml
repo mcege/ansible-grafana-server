@@ -18,5 +18,3 @@ grafana_server_apt_repo_key_url: 'https://packagecloud.io/gpg.key https://grafan
 grafana_server_yum_repo: grafana
 
 version: installed
-
-grafana_server_yum_pkg: grafana
