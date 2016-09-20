@@ -12,6 +12,8 @@
 #  when: install_repo and ansible_os_family == 'Debian'
 
 - name: Install grafana yum repo
+  become: yes
+  become_user: root
   include: repo/yum.yml
   when: install_repo and ansible_os_family == 'RedHat'
 

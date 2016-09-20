@@ -49,8 +49,8 @@ root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana
 [database]
 # Either "mysql", "postgres" or "sqlite3", it's your choice
 type = postgres
-host = {{ grafana_psql_host }}
-name = grafana
+host = {{ grafana_psql_host_port }}
+name = {{ grafana_db_name }}
 user = grafana
 password = grafana
 
@@ -70,7 +70,7 @@ provider = postgres
 # file: session dir path, is relative to grafana data_path
 # redis: config like redis server addr, poolSize, password, e.g. `127.0.0.1:6379,100,grafana`
 # mysql: go-sql-driver/mysql dsn config string, e.g. `user:password@tcp(127.0.0.1)/database_name`
-;provider_config = sessions
+provider_config =  user=grafana password=grafana host={{ grafana_psql_host }} port={{ grafana_psql_port }} dbname={{ grafana_db_name }} sslmode=disable
 
 # Session cookie name
 ;cookie_name = grafana_sess
@@ -98,7 +98,6 @@ provider = postgres
 ;admin_user = admin
 
 # default admin password, can be changed before first start of grafana,  or in profile settings
-
 
 # default admin password, can be changed before first start of grafana,  or in profile settings
 ;admin_password = admin
@@ -211,13 +210,10 @@ allow_org_create = false
 ;enabled = false
 ;path = /var/lib/grafana/dashboards
 
-admin_user = admin
-admin_password = admin
-
 #################################### Auth Proxy ##########################
 [auth.proxy]
-enabled = true
-header_name = X-WEBAUTH-USER
-header_property = username
-auto_sign_up = false
+enabled = false
+;header_name = X-WEBAUTH-USER
+;header_property = username
+auto_sign_up = true
 
