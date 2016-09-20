@@ -20,3 +20,5 @@ grafana_server_yum_repo: grafana
 version: installed
 
 grafana_server_yum_pkg: grafana
+
+grafana_psql_host: {{ default_psql_host }} # will be updated project specificly, eg: 172.25.6.63:5432
