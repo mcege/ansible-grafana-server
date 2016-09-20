@@ -49,7 +49,7 @@ root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana
 [database]
 # Either "mysql", "postgres" or "sqlite3", it's your choice
 type = postgres
-host = "{{ grafana_psql_host }}"
+host = {{ grafana_psql_host }}
 name = grafana
 user = grafana
 password = grafana

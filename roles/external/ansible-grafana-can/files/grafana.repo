@@ -1,5 +1,5 @@
 [grafana]
-name=grafana
-baseurl=ftp://10.134.50.221/grafana/
+name={{ grafana_server_yum_repo_name }}
+baseurl={{ grafana_server_yum_repo_base_url }}
 gpgcheck=0
 enabled=1

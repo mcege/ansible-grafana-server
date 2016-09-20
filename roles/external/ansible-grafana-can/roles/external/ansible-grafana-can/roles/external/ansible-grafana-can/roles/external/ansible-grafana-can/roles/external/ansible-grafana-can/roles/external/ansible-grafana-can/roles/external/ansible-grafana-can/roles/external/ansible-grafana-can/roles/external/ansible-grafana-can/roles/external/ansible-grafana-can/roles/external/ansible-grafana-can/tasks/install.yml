@@ -12,5 +12,5 @@
 - name: Install grafana-server on RedHat systems
   yum:
     name="{{ grafana_server_yum_pkg }}{{'-' + version if not version in ['installed','latest'] else '' }}"
-    state={{ 'latest' if version == 'latest' else 'present' }}
+     state={{ 'latest' if version == 'latest' else 'present' }}
   when: ansible_os_family == 'RedHat'
