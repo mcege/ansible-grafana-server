@@ -18,7 +18,7 @@ install_repo: true
 # Grafana yum repo params
 grafana_server_yum_repo: grafana
 grafana_server_yum_repo_name: grafana
-
+grafana_server_yum_repo_base_url: ftp://10.134.50.221/grafana/
 
 version: installed
 

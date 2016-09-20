@@ -1,5 +1,0 @@
-[grafana]
-name=grafana
-baseurl=ftp://10.134.50.221/grafana/
-gpgcheck=0
-enabled=1
