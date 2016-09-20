@@ -1,0 +1,16 @@
+# Install grafana-server
+---
+
+#- name: Install grafana-server on Debian systems
+#  apt:
+#    name="{{ grafana_server_apt_pkg }}{{'=' + version if not version in ['installed','latest'] else '' }}"
+#    state={{ 'latest' if version == 'latest' else 'present' }}
+#    update_cache=yes
+#    force=yes
+#  when: ansible_os_family == 'Debian'
+
+- name: Install grafana-server on RedHat systems
+  yum:
+    name="{{ grafana_server_yum_pkg }}{{'-' + version if not version in ['installed','latest'] else '' }}"
+     state={{ 'latest' if version == 'latest' else 'present' }}
+  when: ansible_os_family == 'RedHat'
