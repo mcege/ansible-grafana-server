@@ -9,6 +9,3 @@
 
 # Configure grafana-server
 - include: config.yml
-
-# Start grafana-server
-- include: start.yml
