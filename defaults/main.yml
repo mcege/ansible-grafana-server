@@ -32,7 +32,7 @@ grafana_db_user: grafana_user #"{{ default_grafana_psql_db_user }}" # will be up
 grafana_db_pass: q1w2e3r4 #"{{ default_grafana_psql_db_pass }}" # will be updated project specificly, eg: grafana
 
 # Remote postgresql server params
-sky_db_admin_user: mcege #"{{ default_sky_db_admin_user }}"
+sky_db_admin_user: root #"{{ default_sky_db_admin_user }}"
 sky_db_admin_password: q1w2e3r4 #"{{ default_sky_db_admin_password }}"
 
 # /etc/grafana/grafana.ini params
