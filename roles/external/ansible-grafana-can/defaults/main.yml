@@ -14,8 +14,8 @@ grafana_db_user: grafana
 grafana_db_pass: "{{ default_grafana_db_pass }}"
 
 # Remote postgresql server params
-grafana_db_admin_user: "{{ sky_db_admin_user }}"
-grafana_db_admin_password: "{{ sky_db_admin_password }}"
+grafana_db_admin_user: mcege #"{{ sky_db_admin_user }}"
+grafana_db_admin_password: q1w2e3r4 #"{{ sky_db_admin_password }}"
 
 # /etc/grafana/grafana.ini params
 grafana_http_port: 9201 
