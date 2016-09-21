@@ -1,0 +1,5 @@
+# Start grafana-server
+---
+
+- name: Start grafana-server
+  service: name=grafana-server state=started
