@@ -1,0 +1,7 @@
+# Start grafana-server
+---
+
+- name: Start grafana-server
+  become: yes
+  become_user: "{{ sudo_user }}"
+  service: name=grafana-server state=started
