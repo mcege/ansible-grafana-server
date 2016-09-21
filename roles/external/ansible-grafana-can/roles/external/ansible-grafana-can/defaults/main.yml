@@ -27,8 +27,8 @@ grafana_server_yum_pkg: grafana-2.5.0-1.x86_64 # this specific version is needed
 python_psycopg2_yum_pkg: python-psycopg2-2.0.14-2.el6.x86_64
 
 # Grafana database params
-grafana_psql_host_port: 10.134.50.211:5432 #"{{ default_grafana_psql_host_port }}" # will be updated project specificly, eg: 172.25.6.63:5432
-grafana_psql_host: 10.134.50.211 #"{{ default_grafana_psql_host }}" # will be updated project specificly, eg: 172.25.6.63
+grafana_psql_host_port: 10.134.50.227:5432 #"{{ default_grafana_psql_host_port }}" # will be updated project specificly, eg: 172.25.6.63:5432
+grafana_psql_host: 10.134.50.227 #"{{ default_grafana_psql_host }}" # will be updated project specificly, eg: 172.25.6.63
 grafana_psql_port: 5432 #"{{ default_grafana_psql_port }}" # will be updated project specificly, eg: 5432
 grafana_db_name: grafana_can_deneme #"{{ default_grafana_psql_db_name }}" # will be updated project specificly, eg: grafana_fss
 grafana_db_user: grafana_user #"{{ default_grafana_psql_db_user }}" # will be updated project specificly, eg: grafana
