@@ -4,6 +4,8 @@
 - name: Install the python-psycopg2
   yum: name={{ python_psycopg2_yum_pkg }} state=present
 
+# First log in to the remote postgresql server, create a db and a role with the name of sky_db_admin_user. 
+# And than alter the same role with SUPERUSER, LOGIN, CREATEDB and CREATEROLE 
 - name: Create postgres grafana user
   postgresql_user: login_host={{ grafana_psql_host }} 
                    login_user={{ sky_db_admin_user }} 
