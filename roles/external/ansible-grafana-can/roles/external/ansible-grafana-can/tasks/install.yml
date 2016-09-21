@@ -1,8 +1,0 @@
-# Install grafana-server
----
-
-- name: Install grafana-server on RedHat systems
-  yum:
-    name={{ grafana_server_yum_pkg }}
-    state=present
-  when: ansible_os_family == 'RedHat'
