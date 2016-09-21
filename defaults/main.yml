@@ -19,6 +19,9 @@
 # grafana_server_yum_repo_name: "{{ grafana_server_yum_repo_name }}"
 # grafana_server_yum_repo_base_url: "{{ grafana_server_yum_repo_base_url }}" # will be updated, eg: ftp://10.134.50.221/grafana/
 
+# User with sudo rights
+sudo_user: root #"{{ default_sudo_user }}"
+
 # Grafana required yum packages
 grafana_server_yum_pkg: grafana-2.5.0-1.x86_64 # this specific version is needed
 python_psycopg2_yum_pkg: python-psycopg2-2.0.14-2.el6.x86_64
