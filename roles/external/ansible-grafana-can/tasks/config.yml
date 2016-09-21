@@ -9,3 +9,6 @@
     mode=0640
   notify:
     - restart grafana-server
+
+- name: Restart grafana-server
+  service: name=grafana-server state=restarted
