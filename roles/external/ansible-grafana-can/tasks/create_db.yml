@@ -4,12 +4,6 @@
 - name: Install the python-psycopg2
   yum: name={{ python_psycopg2_yum_pkg }} state=present
 
-- name: Create a dummy database for login_user
-  become: yes
-  become_user: postgres
-  command: psql -c 'CREATE DATABASE {{ sky_db_admin_user }}'
-  delegate_to: "{{ grafana_psql_host }}"
-
 - name: Create postgres grafana user
   postgresql_user: login_host={{ grafana_psql_host }} 
                    login_user={{ sky_db_admin_user }} 
