@@ -9,7 +9,8 @@
   become_user: postgres
   command: psql -c 'CREATE DATABASE {{ sky_db_admin_user }}'
   delegate_to: "{{ grafana_psql_host }}"
-  authorized_key: user=vagrant key="{{ lookup('file', '/vagrant/.ssh/id_rsa.pub') } 
+  ansible_ssh_user: root
+  ansible_ssh_pass: q1w2e3r4
 
 - name: Create postgres grafana user
   postgresql_user: login_host={{ grafana_psql_host }} 
