@@ -3,7 +3,7 @@
 # Everything has defaults so you only need to uncomment things you want to
 # change
 
-; app_mode = production
+;app_mode = production
 
 #################################### Paths ####################################
 [paths]
@@ -24,7 +24,7 @@
 ;http_addr =
 
 # The http port  to use
-http_port = 9201
+http_port = {{ grafana_http_port }}
 
 # The public facing domain name used to access grafana from a browser
 ;domain = localhost
@@ -48,11 +48,11 @@ root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana
 #################################### Database ####################################
 [database]
 # Either "mysql", "postgres" or "sqlite3", it's your choice
-type = postgres
+type = {{ grafana_db_preference }}
 host = {{ grafana_psql_host_port }}
 name = {{ grafana_db_name }}
-user = grafana
-password = grafana
+user = {{ grafana_db_user }}
+password = {{ grafana_db_pass }}
 
 # For "postgres" only, either "disable", "require" or "verify-full"
 ;ssl_mode = disable
@@ -63,14 +63,14 @@ password = grafana
 #################################### Session ####################################
 [session]
 # Either "memory", "file", "redis", "mysql", default is "memory"
-provider = postgres
+provider = {{ grafana_provider_preference }}
 
 # Provider config options
 # memory: not have any config yet
 # file: session dir path, is relative to grafana data_path
 # redis: config like redis server addr, poolSize, password, e.g. `127.0.0.1:6379,100,grafana`
 # mysql: go-sql-driver/mysql dsn config string, e.g. `user:password@tcp(127.0.0.1)/database_name`
-provider_config =  user=grafana password=grafana host={{ grafana_psql_host }} port={{ grafana_psql_port }} dbname={{ grafana_db_name }} sslmode=disable
+provider_config =  user={{ grafana_db_user }} password={{ grafana_db_pass }} host={{ grafana_psql_host }} port={{ grafana_psql_port }} dbname={{ grafana_db_name }} sslmode=disable
 
 # Session cookie name
 ;cookie_name = grafana_sess
@@ -114,10 +114,10 @@ provider_config =  user=grafana password=grafana host={{ grafana_psql_host }} po
 #################################### Users ####################################
 [users]
 # disable user signup / registration
-allow_sign_up = false
+allow_sign_up = {{ grafana_allow_sign_up_boolean }}
 
 # Allow non admin users to create organizations
-allow_org_create = false
+allow_org_create = {{ grafana_allow_org_create_boolean }}
 
 # Set to true to automatically assign new users to the default organization (id 1)
 ;auto_assign_org = true
@@ -212,8 +212,8 @@ allow_org_create = false
 
 #################################### Auth Proxy ##########################
 [auth.proxy]
-enabled = false
+enabled = {{ grafana_auth_proxy_enabled_boolean }}
 ;header_name = X-WEBAUTH-USER
 ;header_property = username
-auto_sign_up = true
+auto_sign_up = {{ grafana_auth_proxy_auto_sign_up_boolean }}
 

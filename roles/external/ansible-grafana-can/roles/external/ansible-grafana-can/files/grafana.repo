@@ -1,5 +1,0 @@
-[grafana]
-name=grafana_server_yum_repo_name
-baseurl=grafana_server_yum_repo_base_url
-gpgcheck=0
-enabled=1

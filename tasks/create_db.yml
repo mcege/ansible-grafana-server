@@ -1,0 +1,25 @@
+# Create grafana database and create grafana db user
+---
+
+- name: Install the python-psycopg2
+  yum: name={{ python_psycopg2_yum_pkg }} state=present
+
+- name: Create postgres grafana user
+  postgresql_user: name={{ grafana_psql_db_user }} 
+                   password={{ grafana_psql_db_pass }} 
+                   login_host={{ grafana_psql_host }} 
+                   login_user={{ sky_db_admin_user }} 
+                   login_password={{ sky_db_admin_password }} 
+                   port={{ grafana_psql_port }}
+
+- name: Create postgres grafana db
+  postgresql_db: name={{ grafana_psql_db_name }}
+                 encoding='UTF-8'
+                 lc_collate='tr_TR.UTF-8'
+                 lc_ctype='tr_TR.UTF-8'
+                 template='template0'
+                 owner={{ grafana_psql_db_user }}
+                 login_host={{ grafana_psql_host }}
+                 login_user={{ sky_db_admin_user }}
+                 login_password={{ sky_db_admin_password }}
+                 port={{ grafana_psql_port }}

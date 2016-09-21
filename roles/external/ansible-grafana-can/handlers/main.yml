@@ -1,7 +1,0 @@
-# Handlers for grafana role
----
-
-- name: restart grafana-server
-  become: yes
-  become_user: root
-  service: name=grafana-server state=restarted

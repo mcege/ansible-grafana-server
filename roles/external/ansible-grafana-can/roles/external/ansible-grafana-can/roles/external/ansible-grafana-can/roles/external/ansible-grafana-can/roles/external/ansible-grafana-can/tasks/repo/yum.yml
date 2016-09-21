@@ -1,6 +1,0 @@
-- name: Add the official grafana repository
-  copy:
-    src='../../files/{{ grafana_server_yum_repo }}.repo'
-    dest='/etc/yum.repos.d'
-    owner=root
-    group=root
