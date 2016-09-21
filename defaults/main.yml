@@ -2,8 +2,8 @@
 ---
 
 # Supported OS
-supported_os:
-  - RedHat
+#supported_os:
+#  - RedHat
 
 # Install or not the grafana repo.
 # install_repo: true
