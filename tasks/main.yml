@@ -4,11 +4,11 @@
 # Install grafana-server
 - include: install.yml
 
-# Grafana db installation & user creation
-- include: create_db.yml
-
 # Configure grafana-server
 - include: config.yml
+
+# Grafana db installation & user creation
+- include: create_db.yml
 
 # Start grafana-server
 - include: start.yml
