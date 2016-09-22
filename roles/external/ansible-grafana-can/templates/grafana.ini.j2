@@ -30,7 +30,7 @@ http_port = {{ grafana_http_port }}
 ;domain = localhost
 
 # The full public facing url
-root_url = {{ grafana_root_url }}
+root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana
 
 # Log web requests
 ;router_logging = false
