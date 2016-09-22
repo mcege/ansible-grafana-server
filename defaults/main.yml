@@ -25,4 +25,6 @@ grafana_allow_sign_up_boolean: false
 grafana_allow_org_create_boolean: false
 grafana_auth_proxy_enabled_boolean: false
 grafana_auth_proxy_auto_sign_up_boolean: true
-grafana_root_url: %(protocol)s://%(domain)s:%(http_port)s/grafana
+grafana_root_url: %"{{ grafana_protocol }}"s://%"{{ grafana_domain }}"s:%"{{ grafana_http_port }}"s/grafana
+grafana_protocol: http
+grafana_domain: localhost
